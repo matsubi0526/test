@@ -1,2 +1,7 @@
 This is a test file for practice of github.
 別の端末から変更内容を反映させたとき、この端末に変更を反映させたい。
+$ git fetch
+$ git diff origin/master
+で差分を確認して問題がないようであれば、
+$ git merge origin/master
+とすればいいようだ。

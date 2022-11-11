@@ -1,1 +1,2 @@
 This is a test file for practice of github.
+別の端末から変更内容を反映させたとき、この端末に変更を反映させたい。

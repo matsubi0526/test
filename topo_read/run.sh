@@ -5,6 +5,7 @@ set -ex
 ROOTDIR=$(cd $(dirname $0) && pwd)
 FC=gfortran
 RUBY=ruby
+PDFTK=pdftk
 IWS=2
 
 PGM=${ROOTDIR:?}/main.exe
@@ -40,4 +41,14 @@ done
 if [ -f ${PGM} ]; then
     rm ${PGM}
 fi
+
+# PDFの結合と回転
+if [ -f topo.pdf ]; then
+    rm -f topo.pdf
+fi
+
+TMPPDF=tmp.pdf
+${PDFTK} *pdf cat output ${TMPPDF}
+${PDFTK} ${TMPPDF} cat 1-endright output topo.pdf
+rm -f ${TMPPDF}
 exit

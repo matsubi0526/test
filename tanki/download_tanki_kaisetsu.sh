@@ -16,7 +16,11 @@ source /home/matsuba/.bashrc
 cd ${HOME:?}/git/test/tanki
 
 ### DOWNLOAD LATEST FILE ###
-wget -O ${FILE1:?} ${URL:?}
+if [ ! -f ${FILE2:?} ]; then
+    wget -O ${FILE2:?} ${URL:?}
+else
+    wget -O ${FILE1:?} ${URL:?}
+fi
 
 ### DO LOOP ###
 for ii in `seq -w 1 10`; do

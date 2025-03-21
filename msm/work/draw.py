@@ -30,7 +30,8 @@ ax.set_title("projection='ccrs.LambertConformal', ")
 
 gl = ax.gridlines(crs=ccrs.PlateCarree(), draw_labels=True,
                   x_inline = False, y_inline = False,
-                  linewidth=1, linestyle=':', color='k', alpha=0.8)
+                  linewidth=1, linestyle=':', color='k', alpha=0.8,
+                  rotate_labels=False)
 gl.right_labels = gl.top_labels = False
 gl.xlocator = mticker.FixedLocator(np.arange(-180,180,10))  # 経度線
 gl.ylocator = mticker.FixedLocator(np.arange(-90,90,10))    # 緯度線

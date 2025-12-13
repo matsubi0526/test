@@ -10,8 +10,9 @@ from my_module import my_function
 
 def main():
     print("this is a test")
-    my_function.test1()
-    print(np.e)
+    data = my_function.getdata_from_file("data.dat")
+    print(data.shape)
+    my_function.quicklook(data,-3,3)
 
 if __name__ == "__main__":
     main()
